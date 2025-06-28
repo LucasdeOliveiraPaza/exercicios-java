@@ -1,0 +1,44 @@
+package Ex4;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaAlunos {
+    static class Aluno {
+        private String nome;
+        private int idade;
+
+        public Aluno(String nome, int idade) {
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        @Override
+        public String toString() {
+            return "Aluno [nome = " + nome + ", idade = " + idade + "]";
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Aluno> alunos = new ArrayList<>();
+
+        alunos.add(new Aluno("Leonardo", 17));
+        alunos.add(new Aluno("Rafael", 16));
+        alunos.add(new Aluno("Donatello", 15));
+        alunos.add(new Aluno("Michelangelo", 13));
+
+        for (int i = 0; i < alunos.size(); i++) {
+            System.out.println(alunos.get(i));
+        }
+
+        System.out.println("-------------------");
+        
+        for (Aluno aluno: alunos) {
+            System.out.println(aluno);
+        }
+
+        System.out.println("-------------------");
+
+        alunos.forEach((aluno) -> { System.out.println(aluno); });
+    }
+}
